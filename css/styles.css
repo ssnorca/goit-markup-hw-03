@@ -7,6 +7,25 @@
   --cloud: #f4f4fd;
   --slate: #434455;
 }
+/* CSS RESET */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+}
+/* END of CSS Reset  */
 /* Checked */
 body {
   /* background-color: var(--cloud); */
@@ -15,7 +34,29 @@ body {
   font-size: 14px;
   letter-spacing: 0.03em;
 }
+.container {
+  width: 1158px;
+}
 
+.page-header {
+  display: flex;
+  border-bottom: 1px solid var(--cornflower, #e7e9fc);
+}
+
+.nav-menu,
+.contacts-menu,
+.benefits,
+.what-we-do,
+.team,
+.projects,
+.filters {
+  display: flex;
+  justify-content: center;
+}
+
+.section {
+  padding-bottom: 120px;
+}
 /* Checked */
 .nav-menu .page {
   font-weight: 500;
@@ -113,6 +154,9 @@ body {
   line-height: 1.14;
 }
 
+.benefits {
+}
+
 /* Checked */
 .benefits .description {
   color: var(--slate);
@@ -147,6 +191,9 @@ body {
   font-weight: 500;
 }
 
+.team .name {
+  padding-top: 32px;
+}
 /* Checked */
 .project {
   text-decoration: none;
@@ -167,6 +214,10 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.87;
+}
+
+.projects > li {
+  border-bottom: 1px solid var(--cornflower);
 }
 
 /* Checked */
