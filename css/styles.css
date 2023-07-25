@@ -7,7 +7,18 @@
   --cloud: #f4f4fd;
   --slate: #434455;
 }
+
+/* checked */
+body {
+  /* background-color: var(--cloud); */
+  color: var(--slate);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  background-color: var(--white);
+}
 /* CSS RESET */
+/* CHECKED */
 p,
 h1,
 h2,
@@ -17,103 +28,165 @@ h5,
 h6 {
   margin: 0;
 }
-ul,
-ol {
+/* CHECKED */
+/* Strict calculation of width and height */
+html {
+  box-sizing: border-box;
+}
+
+/* applied for all elements */
+/* Inherits this property from its parent element */
+/* Checked */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+/* CHECKED */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* checked */
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* CHECKED */
+.list {
+  list-style-type: none;
   margin: 0;
   padding: 0;
 }
-img {
-  display: block;
-}
-/* END of CSS Reset  */
-/* Checked */
-body {
-  /* background-color: var(--cloud); */
-  color: var(--slate);
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.03em;
-}
+
+/* CHECKED */
 .container {
-  width: 1158px;
+  width: 1200px;
+  /* top-bottom and left-right*/
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
-.page-header {
+/* CHECKED */
+.menu,
+.navigation,
+.nav-menu,
+.contacts-menu {
   display: flex;
+  align-items: center;
+}
+
+/* CHECKED */
+.contacts-menu {
+  margin-left: auto;
+}
+
+/* targets the item w/in the nav-menu and contacts-menu */
+/* except the last item */
+.nav-menu .item:not(:last-child),
+.contacts-menu .item:not(:last-child) {
+  margin-right: 50px;
+}
+/* CHECKED */
+.page-header {
   border-bottom: 1px solid var(--cornflower, #e7e9fc);
 }
 
-.nav-menu,
-.contacts-menu,
-.benefits,
-.what-we-do,
-.team,
-.projects,
 .filters {
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
+/* adjacent combinator: applies style to a range of child inside a parent*/
+.filters .space + .space {
+  margin-left: 8px;
+}
+
+/* CHECKED */
+.what-we-do {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+/* checked */
 .section {
   padding-bottom: 120px;
 }
-/* Checked */
-.nav-menu .page {
+
+/* checked */
+.nav-menu .page,
+.contacts-menu .contact {
   font-weight: 500;
   color: var(--navyblue);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 31px;
 }
 
-/* Checked */
+/* checked */
+.nav-menu {
+  margin-left: 93px;
+}
+
+/* checked */
 .nav-menu .page:hover,
 .nav-menu .page:focus,
 .nav-menu .page .current,
-.contacts-menu .item:hover,
-.contacts-menu .item:focus {
+.contacts-menu .contact:hover,
+.contacts-menu .contact:focus {
   color: var(--iris);
 }
-/* Checked */
-.contacts-menu .item {
+
+/* checked */
+.contacts-menu .contact {
   color: var(--slate);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
 
-/* Checked */
-.list {
-  list-style-type: none;
-}
-
-/* Checked */
+/* checked */
 .bg-hero {
   background: var(--navyblue);
 }
 
-/* Checked */
-.hero-title {
-  color: var(--white);
-  font-size: 44px;
-  font-weight: 900;
-  line-height: 1.36;
-  letter-spacing: 0.06em;
+/* checked */
+.hero {
+  padding: 200px 0;
   text-align: center;
 }
 
-/* Checked */
+/* checked */
+.hero-title {
+  color: var(--white);
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.07;
+  letter-spacing: 0.06em;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
 .button {
   cursor: pointer;
   border-color: transparent;
   font-family: inherit;
   letter-spacing: 0.03em;
+  border-radius: 4px;
 }
 
-/* Checked */
+/* checked */
 .button.primary {
   color: var(--white);
   background-color: var(--iris);
@@ -121,16 +194,22 @@ body {
   font-weight: 700;
   line-height: 1.87;
   letter-spacing: 0.06em;
+  padding: 10px 32px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-/* Checked */
+/* checked */
+/* 3d version of button */
 .button.primary:hover,
 .button.primary:focus {
   background-color: var(--ocean);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-/* Checked */
+/* checked */
 .button.filter {
+  padding: 6px 22px;
   color: var(--iris);
   font-weight: 500;
   background-color: var(--cloud);
@@ -138,77 +217,130 @@ body {
   line-height: 1.62;
 }
 
-/* Checked */
+/* checked */
 .button.filter:hover,
 .button.filter:focus,
 .button.filter.current {
   color: var(--cloud);
   background-color: var(--ocean);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-/* Checked */
+/* checked */
 .benefits .title {
   color: var(--navyblue);
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 500;
   line-height: 1.14;
+  margin-bottom: 10px;
 }
 
+/* checked */
 .benefits {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-right: -30px;
 }
 
-/* Checked */
+/* checked */
+.benefits .item {
+  flex-basis: calc(100% / 4 -30px);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+/* checked */
 .benefits .description {
   color: var(--slate);
   line-height: 1.71;
+  font-weight: 400;
+  font-size: 16px;
 }
 
-/* Checked */
+/* checked */
 .section-title {
   text-align: center;
   color: var(--navyblue);
   font-size: 36px;
   font-weight: 700;
   line-height: 1.17;
+  margin-bottom: 50px;
 }
 
-/* Checked */
+/* CHECKED */
+.section.no-top-padding {
+  padding: 0;
+}
+
+/* CHECKED */
 .bg-team {
   background-color: var(--cloud);
 }
 
-/* Checked */
+/* CHECKED */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -30px;
+  margin-left: -30px;
+}
+
+/* CHECKED */
+.team .item {
+  flex-basis: calc(100% / 4 -30px);
+  margin-left: 30px;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  background-color: var(--white);
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* CHECKED */
 .team .name,
 .team .position {
-  color: var(--navyblue);
-  font-size: 16px;
   line-height: 1.2;
   text-align: center;
 }
 
-/* Checked */
+/* CHECKED */
 .team .name {
   font-weight: 500;
+  color: var(--navyblue);
+  font-size: 20px;
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
 
-.team .name {
-  padding-top: 32px;
-}
-/* Checked */
-.project {
-  text-decoration: none;
+/* CHECKED */
+.team .position {
+  font-size: 16px;
+  color: var(--slate);
+  font-weight: 400;
 }
 
-/* Checked */
+/* checked */
+.substrate {
+  background-color: var(--white);
+  padding: 20px 24px;
+  border: 1px solid #eeeeee;
+  border-top: 0;
+}
+
+/* checked */
 .project .name {
   color: var(--navyblue);
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 500;
   line-height: 2;
+  margin-bottom: 4px;
   letter-spacing: 0.06em;
 }
 
-/* Checked */
+/* checked */
 .project .type {
   color: var(--slate);
   font-weight: 400;
@@ -216,31 +348,65 @@ body {
   line-height: 1.87;
 }
 
+/* checked */
+.project-card {
+  flex-basis: calc(100% / 3 -30px);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+/* checked */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
 .projects > li {
   border-bottom: 1px solid var(--cornflower);
 }
 
-/* Checked */
-.page-footer.bg-footer .studio-footer,
-.page-footer.bg-footer .footer-description {
+/* checked */
+.logo-link.footer {
+  margin-bottom: 20px;
+}
+
+/* checked */
+.page-footer {
+  padding: 60px 0;
+}
+
+/* checked */
+.studio-footer {
   color: var(--cloud);
 }
 
+/* checked */
+.page-footer.bg-footer .footer-description {
+  color: var(--cloud);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  padding-top: 17px;
+}
+
+/* checked */
 .page-footer.bg-footer {
   background-color: var(--navyblue);
 }
 
-/* Checked */
+/* checked */
 .logo-link {
   text-decoration: none;
   font-size: 0;
 }
-/* Checked */
+
+/* checked */
 .logo-link > span {
-  font-style: normal;
   font-size: 26px;
 }
-/* Checked */
+
+/* checked */
 .logo,
 .studio {
   display: inline-block;
@@ -248,14 +414,4 @@ body {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   line-height: 1.2;
-}
-/* Checked */
-.studio-header {
-  color: var(--navyblue);
-  font-weight: 700;
-}
-/* Checked */
-.studio-footer {
-  color: var(--cloud);
-  font-weight: 700;
 }
